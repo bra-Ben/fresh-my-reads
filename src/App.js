@@ -3,7 +3,7 @@ import { Route } from 'react-router-dom';
 import { debounce } from 'throttle-debounce';
 import * as BooksAPI from './BooksAPI';
 import './App.css';
-import ListBooks from './ListBooks';
+import BookList from './BookList';
 import SearchBooks from './SearchBooks';
 
 const bookshelves = [
