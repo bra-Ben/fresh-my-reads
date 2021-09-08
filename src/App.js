@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
-import { debounce } from 'throttle-debounce';
+// import { debounce } from 'throttle-debounce';
 import * as BooksAPI from './BooksAPI';
 import './App.css';
 import BookList from './BookList';
-import SearchBooks from './SearchBooks';
+import bookSearch from './BookSearch';
 
 const bookshelves = [
   { key: 'currentlyReading', name: 'Currently Reading' },
@@ -14,7 +14,7 @@ const bookshelves = [
 class BooksApp extends Component {
   state = {
     myBooks: [],
-    searchBooks: [],
+    bookSearch: [],
     error: false
   };
   componentDidMount = () => {
@@ -71,7 +71,7 @@ class BooksApp extends Component {
           exact
           path="/"
           render={() => (
-            <ListBooks
+            <BookList
               bookshelves={bookshelves}
               books={myBooks}
               onMove={this.moveBook}
@@ -81,8 +81,8 @@ class BooksApp extends Component {
         <Route
           path="/search"
           render={() => (
-            <SearchBooks
-              searchBooks={searchBooks}
+            <bookSearch
+              bookSearch={bookSearch}
               myBooks={myBooks}
               onSearch={this.searchForBooks}
               onMove={this.moveBook}
