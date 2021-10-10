@@ -3,7 +3,7 @@ import SearchResults from './SearchResults';
 import { Link } from 'react-router-dom';
 import SearchBar from './SearchBar';
 
-class bookSearch extends Component {
+class BookSearch extends Component {
   render() {
     const { searchBooks, myBooks, onSearch, onResetSearch, onMove } = this.props;
     
@@ -18,7 +18,7 @@ class bookSearch extends Component {
           <SearchBar onSearch={onSearch} />
         </div>
         <SearchResults
-          bookSearch={bookSearch}
+          bookSearch={searchBooks}
           myBooks={myBooks}
           onMove={onMove}
         />
@@ -27,4 +27,4 @@ class bookSearch extends Component {
   }
 }
 
-export default bookSearch;
+export default BookSearch;

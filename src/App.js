@@ -4,7 +4,7 @@ import { debounce } from 'throttle-debounce';
 import * as BooksAPI from './BooksAPI';
 import './App.css';
 import BookList from './BookList';
-import bookSearch from './BookSearch';
+import BookSearch from './BookSearch';
 
 const bookshelves = [
   { key: 'currentlyReading', name: 'Currently Reading' },
@@ -14,7 +14,7 @@ const bookshelves = [
 class BooksApp extends Component {
   state = {
     myBooks: [],
-    bookSearch: [],
+    BookSearch: [],
     error: false
   };
   componentDidMount = () => {
@@ -81,8 +81,8 @@ class BooksApp extends Component {
         <Route
           path="/search"
           render={() => (
-            <bookSearch
-              bookSearch={bookSearch}
+            <BookSearch
+              bookSearch={searchBooks}
               myBooks={myBooks}
               onSearch={this.searchForBooks}
               onMove={this.moveBook}
